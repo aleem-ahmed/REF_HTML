@@ -1,0 +1,36 @@
+<html>
+	<body>
+		<div id="output"></div>
+	</body>
+</html>
+
+<script>
+	var userAge;
+
+	//Take in User inputs
+	var userYear = 1990;
+	var userMonth = 7;
+	var userDay = 23;
+
+	//form the Users Date of Birth
+	var birthdayDate = new Date();
+	birthdayDate.setMonth(userMonth);
+	birthdayDate.setMonth(userMonth);
+
+	//get Current Year
+	var currentDate = new Date();
+	var currentYear = currentDate.getFullYear();
+
+	//check the variables
+	console.log(currentDate);
+	console.log(currentDate);
+
+	//Find out what the age is..
+	if (currentDate < birthdayDate) {
+		userAge = currentYear - userYear - 1;
+	} else {
+		userAge = currentYear - userYear;	
+	}
+
+	document.getElementById("output").innerHTML = userAge;
+</script>

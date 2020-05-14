@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- JQUERY CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- BOOTSTRAP CSS AND JS CDN -->
+	<link
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+		crossorigin="anonymous"
+	>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+		integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+		crossorigin="anonymous"
+	></script>
+	<title>Document</title>
+
+	<style>
+		body {
+			background-color: #f9f9f9;
+			font-size: .875rem;
+		}
+
+		.feather {
+			width: 16px;
+			height: 16px;
+			vertical-align: text-bottom;
+		}
+
+		.feather-2 {
+			width: 24px;
+			height: 24px;
+			vertical-align: text-bottom;
+		}
+
+		/* Sidebar */
+		.sidebar {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			right: 0;
+
+			width: 18%;
+			max-width: 260px;
+
+			z-index: 100;
+			/* Behind the navbar */
+			padding: 0;
+			box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+		}
+
+		.sidebar-sticky {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 48px;
+			/* Height of navbar */
+			height: calc(100vh - 48px);
+			padding-top: .5rem;
+			overflow-x: hidden;
+			overflow-y: auto;
+			/* Scrollable contents if viewport is shorter than content. */
+		}
+
+		.sidebar .nav-link {
+			font-weight: 500;
+			color: #333;
+		}
+
+		/* Navbar */
+		.navbar-brand {
+			padding-top: .75rem;
+			padding-bottom: .75rem;
+			text-align: center;
+			font-size: 1rem;
+
+			background-color: black;
+		}
+	</style>
+
+	<style>
+		/*** CONTACT CHAT LIST ***/
+		.inbox_chat {
+			bottom: 2vh;
+			position: absolute;
+			overflow-y: scroll;
+			height: 50vh;
+
+			margin: 0 4px;
+
+			background-color: grey;
+		}
+
+
+		.chat_list {
+			border-bottom: 1px solid #c4c4c4;
+			margin: 0;
+			padding: 18px 16px 10px;
+		}
+
+		.active_chat{ background:#ebebeb; }
+
+
+
+		.chat_people {
+			overflow: hidden;
+			clear: both;
+		}
+
+		.chat_img {
+			float: left;
+			width: 11%;
+		}
+		
+		.chat_img img{ max-width:100%; }
+
+		.chat_ib {
+			float: left;
+			padding: 0 0 0 15px;
+			width: 88%;
+		}
+
+		.chat_ib h5 {
+			font-size:15px;
+			color:#464646;
+			margin:0 0 8px 0;
+		}
+
+		.chat_ib h5 span {
+			font-size: 13px;
+			float: right;
+		}
+
+		.chat_ib p {
+			font-size:14px;
+			color: #989898;
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- TOP NAV BAR -->
+	<nav class="navbar navbar-dark black sticky-top flex-md-nowrap p-0" style="background-color: black;">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Opall.io</a>
+
+		<!-- TOP-MIDDLE BUTTONS -->
+		<div>
+			<a href="#">
+				<button class="btn btn-outline-secondary">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="feather-2 feather-home"
+					>
+						<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+						<polyline points="9 22 9 12 15 12 15 22"></polyline>
+					</svg>
+				</button>
+			</a>
+	
+			<a href="#">
+				<button class="btn btn-outline-secondary">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="feather-2 feather-users"
+					>
+						<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+						<circle cx="9" cy="7" r="4"></circle>
+						<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+						<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+					</svg>
+				</button>
+			</a>
+		</div>
+		
+		<!-- SIDE MENU BUTTON -->
+		<ul class="navbar-nav" style="width: 16.66%;">
+			<li>
+				<button href="javascript:void(0)" onclick="openNav()" class="btn btn-outline-secondary"
+					style="width: 100%; height: 48px; border-radius: 0%; font-size: 1.7em;">☰</button>
+			</li>
+		</ul>
+	</nav>
+
+	<!-- MAIN CONTENT -->
+	<div class="container-fluid">
+		<div class="row">
+			<!-- NAV LEFT SIDE BAR -->
+			<nav class="col-md-2 d-none d-md-block bg-dark sidebar" style="left: 0;">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<button class="btn btn-outline-secondary" style="width: 100%;">Schedule</button>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<button class="btn btn-outline-secondary" style="width: 100%;">Contacts</button>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<button class="btn btn-outline-secondary" style="width: 100%;">Settings</button>
+							</a>
+						</li>
+					</ul>
+					<br>
+					<br>
+
+					<div class="inbox_chat">
+						<div class="chat_list active_chat">
+							<div class="chat_people">
+								<div class="chat_img">
+									<img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+								</div>
+								<div class="chat_ib">
+									<h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="chat_list ">
+							<div class="chat_people">
+								<div class="chat_img">
+									<img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+								</div>
+								<div class="chat_ib">
+									<h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="chat_list ">
+							<div class="chat_people">
+								<div class="chat_img">
+									<img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+								</div>
+								<div class="chat_ib">
+									<h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="chat_list ">
+							<div class="chat_people">
+								<div class="chat_img">
+									<img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+								</div>
+								<div class="chat_ib">
+									<h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+								</div>
+							</div>
+						</div>
+						
+						<div class="chat_list ">
+							<div class="chat_people">
+								<div class="chat_img">
+									<img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+								</div>
+								<div class="chat_ib">
+									<h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="chat_list ">
+							<div class="chat_people">
+								<div class="chat_img">
+									<img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+								</div>
+								<div class="chat_ib">
+									<h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="chat_list ">
+							<div class="chat_people">
+								<div class="chat_img">
+									<img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+								</div>
+								<div class="chat_ib">
+									<h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</nav>
+
+
+			<!-- NAV LEFT RIGHT BAR -->
+			<nav class="col-md-2 d-none d-md-block sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<button class="btn btn-primary" style="width: 100%;">[ + ] Create Task</button>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<button class="btn btn-primary" style="width: 100%;">[ + ] Enter Event</button>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<div style="width: 60%; margin: auto; margin-top: 20px; height: 5000px;">
+				<nav>
+					<div class="nav nav-tabs" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+							aria-controls="nav-home" aria-selected="true">Home</a>
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+							aria-controls="nav-profile" aria-selected="false">Profile</a>
+						<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+							aria-controls="nav-contact" aria-selected="false">Contact</a>
+					</div>
+				</nav>
+
+				<div
+					class="tab-content"
+					style="
+						padding: 15px;
+						background-color: white;
+						border-style: solid;
+						border-width: 0 1px 1px 1px;
+						border-color: #dee2e6;
+					"
+					id="nav-tabContent"
+				>
+					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+						deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+						provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
+						fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
+						est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis
+						voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis
+						aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+						Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
+						consequatur aut perferendis doloribus asperiores repellat.
+					</div>
+					<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+					<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>
