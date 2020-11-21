@@ -1,0 +1,16 @@
+table {
+	width: 75%;
+	margin: auto;
+	padding: 5px;
+
+	border-style: solid;
+
+	background-color: rgb(145, 245, 145);
+}
+
+td {
+	padding: 10px;
+	border-style: solid;
+
+	background-color: rgb(255, 171, 171);
+}
