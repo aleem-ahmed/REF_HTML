@@ -24,32 +24,76 @@
 
 <!-- Universal Styling -->
 <style>
-	* {
-		box-sizing: border-box;
-		margin: 0px;
-	}
-
 	.components {
 		font-family: sans-serif;
 		scroll-snap-type: y mandatory;
 		overflow: auto;
 		height: 100vh;
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
+	}
+
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.components::-webkit-scrollbar {
+		display: none;
 	}
 		
 	.component {
+		height: 100%;
 		scroll-snap-align: start;
 	}
+
+	.item-container {
+			height: 100%;
+			overflow: hidden;
+			cursor: pointer;
+		}
+
+		.item {
+			height: 100%;
+			width: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			-webkit-transition: all .5s;
+			-moz-transition: all .5s;
+			-o-transition: all .5s;
+			transition: all .5s;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.item:before {
+			content: "";
+			display: block;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+
+		.item:hover:before {
+			background-color: rgba(0, 0, 0, 0.40);
+		}
+
+		.item h5 {
+			display: none;
+			position: absolute;
+			text-align: center;
+			font-size: 3em !important;
+			cursor: pointer;
+			color: white;
+			text-transform: uppercase;
+		}
+
+		.item:hover h5 {
+			display: block;
+		}
 </style>
 
-<div id="wpadminbar" style="text-align: center; background: grey;">
-	<h4>adminbar</h4>
-</div>
-
-<div class="header-wrapper" style="text-align: center; background: brown;">
-	<h1>header</h1>
-</div>
-
 <div id="components" class="components">
+	<!-- 1 -->
 	<div class="component">
 		<!-- HTML -->
 		<div id="section-1" class="section-1">
@@ -66,43 +110,36 @@
 		</style>
 	</div>
 	
+	<!-- 2 -->
 	<div class="component">
 		<!-- HTML -->
 		<div id="section-2" class="section-2 bootstrap-wrapper">
-			<div class="row w-100 m-0">
+			<div class="row w-100 m-0 item-container">
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
-					<div class="w-100 item-container">
-						<div class="w-100 bg-1 item">
-							<h5>Furniture</h5>
-						</div>
+					<div class="w-100 bg-1 item">
+						<h5>Furniture</h5>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
-					<div class="w-100 item-container">
-						<div class="w-100 bg-2 item">
-							<h5>Light</h5>
-						</div>
+					<div class="w-100 bg-2 item">
+						<h5>Light</h5>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
-					<div class="w-100 item-container">
-						<div class="w-100 bg-3 item">
-							<h5>Textile</h5>
-						</div>
+					<div class="w-100 bg-3 item">
+						<h5>Textile</h5>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
-					<div class="w-100 item-container">
-						<div class="w-100 bg-4 item">
-							<h5>Interior</h5>
-						</div>
+					<div class="w-100 bg-4 item">
+						<h5>Interior</h5>
 					</div>
 				</div>
 			</div>
@@ -133,76 +170,25 @@
 				background-image: url('https://source.unsplash.com/1000x600/?mountains');
 				background-size: auto 100%;
 			}
-	
-			.item-container {
-				height: 100vh;
-				overflow: hidden;
-				cursor: pointer;
-			}
-	
-			.item {
-				height: 100%;
-				width: 100%;
-				background-size: cover;
-				background-repeat: no-repeat;
-				-webkit-transition: all .5s;
-				-moz-transition: all .5s;
-				-o-transition: all .5s;
-				transition: all .5s;
-	
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-	
-			.item:before {
-				content: "";
-				display: block;
-				height: 100%;
-				width: 100%;
-				top: 0;
-				left: 0;
-			}
-	
-			.item:hover:before {
-				background-color: rgba(0, 0, 0, 0.40);
-			}
-	
-			.item h5 {
-				display: none;
-				position: absolute;
-				text-align: center;
-				font-size: 3em !important;
-				cursor: pointer;
-				color: white;
-				text-transform: uppercase;
-			}
-	
-			.item:hover h5 {
-				display: block;
-			}
 		</style>
 	</div>
 	
+	<!-- 3 -->
 	<div class="component">
 		<!-- HTML -->
 		<div id="section-3" class="section-3 bootstrap-wrapper">
-			<div class="row w-100 m-0">
+			<div class="row w-100 m-0 item-container">
 				<!-- Col -->
 				<div class="col-md-6 p-0">
-					<div class="w-100 item-container">
-						<div class="w-100 bg-5 item">
-							<h5>Furniture</h5>
-						</div>
+					<div class="w-100 bg-5 item">
+						<h5>Furniture</h5>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-md-6 p-0">
-					<div class="w-100 item-container">
-						<div class="w-100 bg-6 item">
-							<h5>Light</h5>
-						</div>
+					<div class="w-100 bg-6 item">
+						<h5>Light</h5>
 					</div>
 				</div>
 			</div>
@@ -210,7 +196,7 @@
 	
 		<!-- CSS -->
 		<style>
-			.section-2 {
+			.section-3 {
 				height: 100%;
 			}
 	
@@ -222,54 +208,6 @@
 			.bg-6 {
 				background-image: url('https://source.unsplash.com/1200x1200/?art');
 				background-size: auto 100%;
-			}
-	
-			.item-container {
-				height: 100vh;
-				overflow: hidden;
-				cursor: pointer;
-			}
-	
-			.item {
-				height: 100%;
-				width: 100%;
-				background-size: cover;
-				background-repeat: no-repeat;
-				-webkit-transition: all .5s;
-				-moz-transition: all .5s;
-				-o-transition: all .5s;
-				transition: all .5s;
-	
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-	
-			.item:before {
-				content: "";
-				display: block;
-				height: 100%;
-				width: 100%;
-				top: 0;
-				left: 0;
-			}
-	
-			.item:hover:before {
-				background-color: rgba(0, 0, 0, 0.40);
-			}
-	
-			.item h5 {
-				display: none;
-				position: absolute;
-				text-align: center;
-				font-size: 3em !important;
-				cursor: pointer;
-				color: white;
-				text-transform: uppercase;
-			}
-	
-			.item:hover h5 {
-				display: block;
 			}
 		</style>
 	</div>
