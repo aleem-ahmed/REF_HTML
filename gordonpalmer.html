@@ -20,12 +20,37 @@
 	}
 </style>
 
-
-<div id="custom-hero" class="custom-hero" style="background-color: yellow;">
+<!--- component 1 ------------------------------------------------------------>
+<!-- HTML -->
+<div id="section-1" class="section-1">
 	content goes here
 </div>
 
-<div class="bootstrap-wrapper">
+<!-- JS -->
+<script>
+	let height = 0
+
+	if (document.querySelector('.header-wrapper')) {
+		height = height + document.querySelector('.header-wrapper').offsetHeight
+	}
+	if (document.querySelector('#wpadminbar')) {
+		height = height + document.querySelector('#wpadminbar').offsetHeight
+	}
+
+	document.getElementById("section-1").style.height = `calc(100vh - ${height}px)`
+</script>
+
+<!-- CSS -->
+<style>
+	.section-1 {
+		background-image: url(https://images.unsplash.com/photo-1537726235470-8504e3beef77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+		background-size: 100%;
+	}
+</style>
+
+<!--- component 1 ------------------------------------------------------------>
+<!-- HTML -->
+<div class="section-2 bootstrap-wrapper">
 	<div class="row w-100 m-0">
 		<!-- Col -->
 		<div class="col-sm-6 col-md-3 p-0">
@@ -65,7 +90,7 @@
 	</div>
 </div>
 
-<!-- CUSTOM-HERO -->
+<!-- JS -->
 <script>
 	let height = 0
 
@@ -76,18 +101,15 @@
 		height = height + document.querySelector('#wpadminbar').offsetHeight
 	}
 
-	document.getElementById("custom-hero").style.height = `calc(100vh - ${height}px)`
+	document.getElementById("section-2").style.height = `calc(100vh - ${height}px)`
 </script>
 
-
+<!-- CSS -->
 <style>
-	.custom-hero {
-		background-image: url(https://images.unsplash.com/photo-1537726235470-8504e3beef77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
-		background-size: 100%;
+	.section-2 {
+		height: 100vh;
 	}
-</style>
 
-<style>
 	.bg-1 {
 		background-image: url('https://source.unsplash.com/1000x600/?interior');
 		background-size: auto 100%;
@@ -105,6 +127,109 @@
 
 	.bg-4 {
 		background-image: url('https://source.unsplash.com/1000x600/?mountains');
+		background-size: auto 100%;
+	}
+
+	.item-container {
+		height: 100vh;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.item {
+		height: 100%;
+		width: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		-webkit-transition: all .5s;
+		-moz-transition: all .5s;
+		-o-transition: all .5s;
+		transition: all .5s;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.item:before {
+		content: "";
+		display: block;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.item:hover:before {
+		background-color: rgba(0, 0, 0, 0.40);
+	}
+
+	.item h5 {
+		display: none;
+		position: absolute;
+		text-align: center;
+		font-size: 3em !important;
+		cursor: pointer;
+		color: white;
+		text-transform: uppercase;
+	}
+
+	.item:hover h5 {
+		display: block;
+	}
+</style>
+
+<!--- component 1 ------------------------------------------------------------>
+<!-- HTML -->
+<div class="section-3 bootstrap-wrapper">
+	<div class="row w-100 m-0">
+		<!-- Col -->
+		<div class="col-md-6 p-0">
+			<div class="w-100 item-container">
+				<div class="w-100 bg-5 item">
+					<h5>Furniture</h5>
+				</div>
+			</div>
+		</div>
+
+		<!-- Col -->
+		<div class="col-md-6 p-0">
+			<div class="w-100 item-container">
+				<div class="w-100 bg-6 item">
+					<h5>Light</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- JS -->
+<script>
+	let height = 0
+
+	if (document.querySelector('.header-wrapper')) {
+		height = height + document.querySelector('.header-wrapper').offsetHeight
+	}
+	if (document.querySelector('#wpadminbar')) {
+		height = height + document.querySelector('#wpadminbar').offsetHeight
+	}
+
+	document.getElementById("section-3").style.height = `calc(100vh - ${height}px)`
+</script>
+
+<!-- CSS -->
+<style>
+	.section-2 {
+		height: 100vh;
+	}
+
+	.bg-5 {
+		background-image: url('https://source.unsplash.com/1200x1200/?material');
+		background-size: auto 100%;
+	}
+
+	.bg-6 {
+		background-image: url('https://source.unsplash.com/1200x1200/?art');
 		background-size: auto 100%;
 	}
 
