@@ -38,18 +38,12 @@
 	}
 
 	.item {
-		height: 100%;
-		width: 100%;
-		background-size: cover;
-		background-repeat: no-repeat;
-		-webkit-transition: all .5s;
-		-moz-transition: all .5s;
-		-o-transition: all .5s;
-		transition: all .5s;
-
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		
+		height: 100%;
+		width: 100%;
 	}
 
 	.item:before {
@@ -65,7 +59,7 @@
 		background-color: rgba(0, 0, 0, 0.40);
 	}
 
-	.item h5 {
+	.item span {
 		display: none;
 		position: absolute;
 		text-align: center;
@@ -75,8 +69,18 @@
 		text-transform: uppercase;
 	}
 
-	.item:hover h5 {
+	.item:hover span {
 		display: block;
+	}
+
+	.item h4 {
+		display: block;
+		position: absolute;
+		text-align: center;
+		font-size: 3em !important;
+		cursor: pointer;
+		color: white;
+		text-transform: uppercase;
 	}
 </style>
 
@@ -88,8 +92,7 @@
 			<div class="row w-100 m-0 item-container">
 				<!-- Col -->
 				<div class="col-12 p-0">
-					<div class="w-100 bg-0 item">
-						<h5>Furniture</h5>
+					<div class="w-100 bg-0 item item-no-hover">
 					</div>
 				</div>
 			</div>
@@ -102,10 +105,14 @@
 			}
 			
 			.bg-0 {
-				background-image: url('https://source.unsplash.com/1920x1080/?home');
-				background-size: auto 100%;
+				background-image: url('https://source.unsplash.com/1920x1080/?architecture');
+				background-size: cover;
 				background-position: center;
-				background-repeat: repeat;
+				background-repeat: no-repeat;
+			}
+
+			.item-no-hover:hover:before {
+				background-color: rgba(0, 0, 0, 0) !important;
 			}
 		</style>
 	</div>
@@ -118,28 +125,28 @@
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
 					<div class="w-100 bg-1 item">
-						<h5>Furniture</h5>
+						<h4>Furniture</h4>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
 					<div class="w-100 bg-2 item">
-						<h5>Light</h5>
+						<h4>Light</h4>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
 					<div class="w-100 bg-3 item">
-						<h5>Textile</h5>
+						<h4>Textile</h4>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
 					<div class="w-100 bg-4 item">
-						<h5>Interior</h5>
+						<h4>Interior</h4>
 					</div>
 				</div>
 			</div>
@@ -153,30 +160,30 @@
 	
 			.bg-1 {
 				background-image: url('https://source.unsplash.com/1000x600/?interior');
-				background-size: auto 100%;
+				background-size: cover;
 				background-position: center;
-				background-repeat: repeat;
+				background-repeat: no-repeat;
 			}
 	
 			.bg-2 {
 				background-image: url('https://source.unsplash.com/1000x600/?sky');
-				background-size: auto 100%;
+				background-size: cover;
 				background-position: center;
-				background-repeat: repeat;
+				background-repeat: no-repeat;
 			}
 	
 			.bg-3 {
 				background-image: url('https://source.unsplash.com/1000x600/?furniture');
-				background-size: auto 100%;
+				background-size: cover;
 				background-position: center;
-				background-repeat: repeat;
+				background-repeat: no-repeat;
 			}
 	
 			.bg-4 {
 				background-image: url('https://source.unsplash.com/1000x600/?mountains');
-				background-size: auto 100%;
+				background-size: cover;
 				background-position: center;
-				background-repeat: repeat;
+				background-repeat: no-repeat;
 			}
 		</style>
 	</div>
@@ -189,14 +196,14 @@
 				<!-- Col -->
 				<div class="col-md-6 p-0">
 					<div class="w-100 bg-5 item">
-						<h5>Furniture</h5>
+						<span>Furniture</span>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-md-6 p-0">
 					<div class="w-100 bg-6 item">
-						<h5>Light</h5>
+						<span>Light</span>
 					</div>
 				</div>
 			</div>
@@ -210,16 +217,16 @@
 	
 			.bg-5 {
 				background-image: url('https://source.unsplash.com/1200x600/?material');
-				background-size: auto 100%;
+				background-size: cover;
 				background-position: center;
-				background-repeat: repeat;
+				background-repeat: no-repeat;
 			}
 	
 			.bg-6 {
 				background-image: url('https://source.unsplash.com/1200x600/?art');
-				background-size: auto 100%;
+				background-size: cover;
 				background-position: center;
-				background-repeat: repeat;
+				background-repeat: no-repeat;
 			}
 		</style>
 	</div>
@@ -232,7 +239,7 @@
 				<!-- Col -->
 				<div class="col-sm-12 p-0">
 					<div class="w-100 bg-1 item">
-						<h5>Wonder & Wander</h5>
+						<span>Wonder & Wander</span>
 					</div>
 				</div>
 			</div>
@@ -246,9 +253,9 @@
 	
 			.bg-7 {
 				background-image: url('https://source.unsplash.com/2400x1080/?wonder');
-				background-size: auto 100%;
+				background-size: cover;
 				background-position: center;
-				background-repeat: repeat;
+				background-repeat: no-repeat;
 			}
 		</style>
 	</div>
