@@ -32,52 +32,52 @@
 	}
 
 	.item-container {
-			height: 100%;
-			overflow: hidden;
-			cursor: pointer;
-		}
+		height: 100%;
+		overflow: hidden;
+		cursor: pointer;
+	}
 
-		.item {
-			height: 100%;
-			width: 100%;
-			background-size: cover;
-			background-repeat: no-repeat;
-			-webkit-transition: all .5s;
-			-moz-transition: all .5s;
-			-o-transition: all .5s;
-			transition: all .5s;
+	.item {
+		height: 100%;
+		width: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		-webkit-transition: all .5s;
+		-moz-transition: all .5s;
+		-o-transition: all .5s;
+		transition: all .5s;
 
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-		.item:before {
-			content: "";
-			display: block;
-			height: 100%;
-			width: 100%;
-			top: 0;
-			left: 0;
-		}
+	.item:before {
+		content: "";
+		display: block;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
 
-		.item:hover:before {
-			background-color: rgba(0, 0, 0, 0.40);
-		}
+	.item:hover:before {
+		background-color: rgba(0, 0, 0, 0.40);
+	}
 
-		.item h5 {
-			display: none;
-			position: absolute;
-			text-align: center;
-			font-size: 3em !important;
-			cursor: pointer;
-			color: white;
-			text-transform: uppercase;
-		}
+	.item h5 {
+		display: none;
+		position: absolute;
+		text-align: center;
+		font-size: 3em !important;
+		cursor: pointer;
+		color: white;
+		text-transform: uppercase;
+	}
 
-		.item:hover h5 {
-			display: block;
-		}
+	.item:hover h5 {
+		display: block;
+	}
 </style>
 
 <div id="components" class="components">
@@ -85,7 +85,10 @@
 	<div class="component">
 		<!-- HTML -->
 		<div id="section-1" class="section-1">
-			
+			<div class="row w-100 m-0 item-container">
+				<!-- Col -->
+				<div class="col-12 p-0"></div>
+			</div>
 		</div>
 	
 		<!-- CSS -->
@@ -93,7 +96,7 @@
 			.section-1 {
 				background-image: url('https://source.unsplash.com/1920x1080/?home');
 				background-size: 100%;
-				height: 100%;
+				background-repeat: repeat;
 			}
 		</style>
 	</div>
@@ -142,21 +145,25 @@
 			.bg-1 {
 				background-image: url('https://source.unsplash.com/1000x600/?interior');
 				background-size: auto 100%;
+				background-repeat: repeat;
 			}
 	
 			.bg-2 {
 				background-image: url('https://source.unsplash.com/1000x600/?sky');
 				background-size: auto 100%;
+				background-repeat: repeat;
 			}
 	
 			.bg-3 {
 				background-image: url('https://source.unsplash.com/1000x600/?furniture');
 				background-size: auto 100%;
+				background-repeat: repeat;
 			}
 	
 			.bg-4 {
 				background-image: url('https://source.unsplash.com/1000x600/?mountains');
 				background-size: auto 100%;
+				background-repeat: repeat;
 			}
 		</style>
 	</div>
@@ -189,13 +196,43 @@
 			}
 	
 			.bg-5 {
-				background-image: url('https://source.unsplash.com/1200x1200/?material');
+				background-image: url('https://source.unsplash.com/1200x600/?material');
 				background-size: auto 100%;
+				background-repeat: repeat;
 			}
 	
 			.bg-6 {
-				background-image: url('https://source.unsplash.com/1200x1200/?art');
+				background-image: url('https://source.unsplash.com/1200x600/?art');
 				background-size: auto 100%;
+				background-repeat: repeat;
+			}
+		</style>
+	</div>
+
+	<!-- 4 -->
+	<div class="component">
+		<!-- HTML -->
+		<div id="section-4" class="section-4 bootstrap-wrapper">
+			<div class="row w-100 m-0 item-container">
+				<!-- Col -->
+				<div class="col-sm-12 p-0">
+					<div class="w-100 bg-1 item">
+						<h5>Wonder & Wander</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<!-- CSS -->
+		<style>
+			.section-4 {
+				height: 100%;
+			}
+	
+			.bg-7 {
+				background-image: url('https://source.unsplash.com/1920x1080/?wonder');
+				background-size: auto 100%;
+				background-repeat: repeat;
 			}
 		</style>
 	</div>
