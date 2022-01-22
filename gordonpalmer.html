@@ -60,8 +60,7 @@
 		background-color: rgba(0, 0, 0, 0.40);
 	}
 
-	.item span {
-		display: none;
+	.item div {
 		position: absolute;
 		text-align: center;
 		font-size: 3em !important;
@@ -70,18 +69,19 @@
 		text-transform: uppercase;
 	}
 
-	.item:hover span {
-		display: block;
-	}
+	.item .hidden-popup { display: none; }
+	.item:hover .hidden-popup { display: block; }
 
-	.item h4 {
-		display: block;
-		position: absolute;
+	.item h1,
+	.item h2,
+	.item h3,
+	.item h4,
+	.item h5,
+	.item h6 {
 		text-align: center;
-		font-size: 3em !important;
+		text-transform: uppercase;
 		cursor: pointer;
 		color: white;
-		text-transform: uppercase;
 	}
 </style>
 
@@ -122,28 +122,36 @@
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
 					<div class="w-100 bg-1 item">
-						<h4>Furniture</h4>
+						<div class="">
+							<h4>Furniture</h4>
+						</div>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
 					<div class="w-100 bg-2 item">
-						<h4>Light</h4>
+						<div class="">
+							<h4>Light</h4>
+						</div>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
 					<div class="w-100 bg-3 item">
-						<h4>Textile</h4>
+						<div class="">
+							<h4>Textiles</h4>
+						</div>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-sm-6 col-md-3 p-0">
 					<div class="w-100 bg-4 item">
-						<h4>Interior</h4>
+						<div class="">
+							<h5>Interior</h5>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -189,14 +197,18 @@
 				<!-- Col -->
 				<div class="col-md-6 p-0">
 					<div class="w-100 bg-5 item">
-						<span>Furniture</span>
+						<div class="hidden-popup">
+							<h5>Furniture</h5>
+						</div>
 					</div>
 				</div>
 	
 				<!-- Col -->
 				<div class="col-md-6 p-0">
 					<div class="w-100 bg-6 item">
-						<span>Light</span>
+						<div class="hidden-popup">
+							<h5>Light</h5>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -228,7 +240,9 @@
 				<!-- Col -->
 				<div class="col-sm-12 p-0">
 					<div class="w-100 bg-1 item">
-						<span>Wonder & Wander</span>
+						<div class="hidden-popup">
+							<h5>Wonder & Wander</h5>
+						</div>
 					</div>
 				</div>
 			</div>
