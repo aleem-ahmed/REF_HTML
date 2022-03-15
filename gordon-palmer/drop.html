@@ -1,0 +1,351 @@
+<link rel="stylesheet" href="https://w3st-io.github.io/index.css">
+<link rel="stylesheet" href="https://w3st-io.github.io/gordon-palmer/index.css">
+
+<div id="gp-menu" class="bootstrap-wrapper">
+	<div class="menu">
+		<!-- EXPLORE --------------------------------------------------------------->
+		<!-- explore-drop-btn -->
+		<a href="#" class="explore-drop-btn">
+			<button
+				class="p-0 drop-btn explore-drop-btn"
+				style="margin: 0 13px;"
+			>Explore</button>
+		</a>
+	
+		<!-- explore-dropdown-content -->
+		<div
+			id="exploreDropdown"
+			class="dropdown-content explore-dropdown-content"
+		>
+			<!-- Container -->
+			<div class="bcontainer">
+				<!-- Row -->
+				<div id="rowExplore" class="row w-100 mw-100 m-0 py-4"></div>
+			</div>
+		</div>
+
+
+		<!-- SHOP --------------------------------------------------------------------->
+		<!-- Shop Button -->
+		<a href="/shop" class="shop-drop-btn">
+			<button
+				class="p-0 drop-btn shop-drop-btn"
+				style="margin: 0 13px;"
+			>Shop</button>
+		</a>
+	
+		<!-- Shop Dropdown -->
+		<div
+			id="shopDropdown"
+			class="dropdown-content shop-dropdown-content"
+		>
+			<!-- Container -->
+			<div class="bcontainer">
+				<!-- Row -->
+				<div id="rowShop" class="row w-100 mw-100 m-0 py-4"></div>
+			</div>
+		</div>
+
+
+		<!-- Interiors -->
+		<a href="/interiors">
+			<button
+				class="p-0 drop-btn"
+				style="margin: 0 13px;"
+			>Interiors</button>
+		</a>
+
+
+		<!-- Contact -->
+		<a href="/contact">
+			<button
+				class="p-0 drop-btn"
+				style="margin: 0 13px;"
+			>Contact</button>
+		</a>
+	</div>
+</div>
+
+<!-- Menu -->
+<script>
+	// [INIT] Const //
+	const menu = {
+		explore: [
+			// Inside Gordon Palmer
+			{
+				item: {
+					text: 'About',
+					link: '#',
+				},
+
+				subItems: [
+					{
+						text: 'Artistic Direction',
+						link: '/explore/artistic-direction',
+					},
+					{
+						text: 'The Studio',
+						link: '/explore/studio',
+					},
+					{
+						text: 'The Gallery',
+						link: '/explore/gallery',
+					},
+				]
+			},
+			
+			// Sustainability
+			{
+				item: {
+					text: 'Sustainability',
+					link: '#',
+				},
+
+				subItems: [
+					{
+						text: 'Our Principles',
+						link: '/explore/our-priniciples',
+					},
+				]
+			},
+			
+			// Media
+			{
+				item: {
+					text: 'Media',
+					link: '#',
+				},
+
+				subItems: [
+					{
+						text: 'The Stories',
+						link: '/explore/the-stories',
+					},
+				]
+			},
+		],
+
+		shop: [
+			// Furniture
+			{
+				item: {
+					text: 'Furniture',
+					link: '/product-category/furniture',
+				},
+
+				subItems: [
+					{
+						text: 'Seating',
+						link: '/product-category/furniture/seating',
+					},
+					{
+						text: 'Tables',
+						link: '/product-category/furniture/tables',
+					},
+				]
+			},
+
+			// Lighting
+			{
+				item: {
+					text: 'Lighting',
+					link: '/product-category/lighting',
+				},
+
+				subItems: [
+					{
+						text: 'Ceiling',
+						link: '/product-category/lighting/ceiling',
+					},
+					{
+						text: 'Floor',
+						link: '/product-category/lighting/floor',
+					},
+					{
+						text: 'Wall',
+						link: '/product-category/lighting/wall',
+					},
+					{
+						text: 'Table',
+						link: '/product-category/lighting/table',
+					},
+				]
+			},
+
+			// Decor
+			{
+				item: {
+					text: 'Decor',
+					link: '/product-category/decor',
+				},
+
+				subItems: [
+					{
+						text: 'Art',
+						link: '/product-category/decor/art',
+					},
+					{
+						text: 'Mirrors',
+						link: '/product-category/decor/mirrors',
+					},
+					{
+						text: 'Objects',
+						link: '/product-category/decor/objects',
+					},
+					{
+						text: 'Tabletop',
+						link: '/product-category/decor/tabletop',
+					},
+					{
+						text: 'Throws',
+						link: '/product-category/decor/throws',
+					},
+					{
+						text: 'Vases',
+						link: '/product-category/decor/vases',
+					},
+				]
+			},
+			
+			// Textiles
+			{
+				item: {
+					text: 'Textiles',
+					link: '/product-category/textile',
+				},
+
+				subItems: [
+					{
+						text: 'Fabric',
+						link: '/product-category/textile/fabric',
+					},
+					{
+						text: 'Performance Fabric',
+						link: '/product-category/textile/performance-fabric',
+					},
+					{
+						text: 'Rug',
+						link: '/product-category/textile/rug',
+					},
+				]
+			},
+			
+			// Wall Covering
+			{
+				item: {
+					text: 'Wallcoverings',
+					link: '/product-category/wallcovering',
+				},
+
+				subItems: [
+					{
+						text: 'Handmade',
+						link: '/product-category/wallcovering/handmade',
+					},
+					{
+						text: 'Naturals',
+						link: '/product-category/wallcovering/naturals',
+					},
+					{
+						text: 'Vinyls',
+						link: '/product-category/wallcovering/vinyls',
+					},
+				]
+			},
+		]
+	}
+</script>
+
+<script>
+	// [INIT] //
+	let shop = `
+		<div class="col-12 pb-4">
+			<h5 class="text-center text-bold text-uppercase text-spread">
+				Shop Curated Luxuries
+			</h5>
+		</div>
+
+		<div class="col-12 col-sm-6 col-md-4 col-lg-2 pb-4">
+			<img
+				src="https://gordonpalmer.com/wp-content/uploads/2022/02/Screen-Shot-2022-02-28-at-2.33.17-PM.png"
+				class="mb-3 menu-img"
+			>
+
+			<a href="/shop">
+				<h6 class="text-bold text-hover-underline">Shop Home &#8250;</h6>
+			</a>
+		</div>
+	`
+	let explore = `
+		<div class="col-12 pb-4">
+			<h5 class="text-center text-bold text-uppercase text-spread">
+				Inside Gordon Palmer
+			</h5>
+		</div>
+
+		<div class="col-12 col-sm-6 col-md-4 col-lg-2 pb-4">
+			<img
+				src="https://gordonpalmer.com/wp-content/uploads/2022/02/Screen-Shot-2021-03-17-at-10.31.49-PM.png"
+				class="mb-3 menu-img"
+			>
+
+			<a href="/explore/artistic-direction" class="">
+				<h6 class="text-bold text-hover-underline">Founder Home &#8250;</h6>
+			</a>
+		</div>
+	`
+
+	// [CREATE-MENU][EXPLORE] //
+	menu.explore.forEach(col => {
+		let section = ``
+		
+		col.subItems.forEach(i => {
+			section = section + `
+			<!-- link-child -->
+			<a href="${i.link}" class="link-child">
+				<h6 class="m-0">${i.text}</h6>
+				</a>
+				`
+			})
+			
+		explore = explore + `
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2 pb-4">
+				<!-- link -->
+				<a href="${col.item.link}" class="link text-uppercase">
+					<h5 class="text-bold">${col.item.text}</h5>
+				</a>
+			
+				${section}
+			</div>
+		`
+	})
+				
+	// [CREATE-MENU][SHOP] //
+	menu.shop.forEach(col => {
+		let section = ``
+
+		col.subItems.forEach(i => {
+			section = section + `
+				<!-- link-child -->
+				<a href="${i.link}" class="link-child">
+					<h6 class="m-0">${i.text}</h6>
+				</a>
+			`
+		})
+
+		shop = shop + `
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2 pb-4">
+				<!-- link -->
+				<a href="${col.item.link}" class="link text-uppercase">
+					<h5 class="text-bold">${col.item.text}</h5>
+				</a>
+
+				${section}
+			</div>
+		`
+	})
+
+	// [INSERT] //
+	document.getElementById('rowExplore').innerHTML = explore
+	document.getElementById('rowShop').innerHTML = shop
+</script>

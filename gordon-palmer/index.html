@@ -1,0 +1,265 @@
+<link rel="stylesheet" href="https://w3st-io.github.io/index.css">
+
+<!-- Background -->
+<style>
+	.hover-item-no-hover:hover:before {
+		background-color: rgba(0, 0, 0, 0) !important;
+	}
+
+	.bg-0 {
+		background-image: url('https://source.unsplash.com/1920x1080/?forrest');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-1 {
+		background-image: url('https://source.unsplash.com/1000x600/?interior');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-2 {
+		background-image: url('https://source.unsplash.com/1000x600/?light');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-3 {
+		background-image: url('https://source.unsplash.com/1000x600/?furniture');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-4 {
+		background-image: url('https://source.unsplash.com/1000x600/?mountains');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-5 {
+		background-image: url('https://source.unsplash.com/1200x600/?material');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-6 {
+		background-image: url('https://source.unsplash.com/1200x600/?art');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-7 {
+		background-image: url('https://source.unsplash.com/2400x1080/?space');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+</style>
+
+<!-- Universal Styling -->
+<style>
+	.scroll-snaps {
+		overflow: auto;
+		scroll-snap-type: y mandatory;
+		
+		/* Enable Safari touch scrolling physics which is needed for scroll snap */
+		-webkit-overflow-scrolling: touch; 
+		
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
+	}
+
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.scroll-snaps::-webkit-scrollbar {
+		display: none;
+	}
+
+	.scroll-snap {
+		scroll-snap-align: start;
+	}
+
+	.hover-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		height: 100%;
+		width: 100%;
+	}
+
+	.hover-item:before {
+		content: "";
+		display: block;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.hover-item:hover:before {
+		background-color: rgba(70, 58, 39, 0.81)
+	}
+
+	.hover-item div {
+		position: absolute;
+		text-align: center;
+		font-size: 3em !important;
+		cursor: pointer;
+		color: white;
+		text-transform: uppercase;
+	}
+
+	.hover-item .hidden-popup { display: none; }
+	.hover-item:hover .hidden-popup { display: block; }
+
+	.hover-item-content {
+		width: 100%;
+		word-wrap: break-word;
+	}
+
+	.hover-item .text {
+		text-align: center;
+		text-transform: uppercase;
+		cursor: pointer;
+		color: white;
+		margin: 0;
+	}
+</style>
+
+<!-- JS -->
+<script>
+	let height = 0
+
+	if (document.querySelector('#wpadminbar')) {
+		height = height + document.querySelector('#wpadminbar').offsetHeight
+	}
+
+	if (document.querySelector('.header-wrapper')) {
+		height = height + document.querySelector('.header-wrapper').offsetHeight
+	}
+
+	document.head.insertAdjacentHTML(
+		'beforeend',
+		`
+			<style>
+				.component {
+					height: calc(100vh - ${height}px)
+				}
+			</style>
+		`
+	)
+</script>
+
+<div class="bootstrap-wrapper scroll-snaps component">
+	<!-- 1 -->
+	<div class="row w-100 mw-100 m-0 h-100 scroll-snap">
+		<div class="col-12 p-0 bg-0">
+			<div class="w-100 hover-item hover-item-no-hover">
+				<div id="hover-item-content" class="hover-item-content px-2">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 2 -->
+	<div class="row w-100 mw-100 m-0 h-100 scroll-snap">
+		<div class="col-sm-6 col-md-3 h-100 p-0 bg-1">
+			<a href="./shop/furniture">
+				<div class="w-100 hover-item">
+					<div id="hover-item-content" class="hover-item-content px-2">
+						<h6 class="text text-shadow">Furniture</h6>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-sm-6 col-md-3 h-100 p-0 bg-2">
+			<a href="./shop/illumination">
+				<div class="w-100 hover-item">
+					<div id="hover-item-content" class="hover-item-content px-2">
+						<h6 class="text text-shadow">Illumination</h6>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-sm-6 col-md-3 h-100 p-0 bg-3">
+			<a href="./shop/textile">
+				<div class="w-100 hover-item">
+					<div id="hover-item-content" class="hover-item-content px-2">
+						<h6 class="text text-shadow">Textile</h6>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-sm-6 col-md-3 h-100 p-0 bg-4">
+			<a href="./shop/wallpapers">
+				<div class="w-100 hover-item">
+					<div id="hover-item-content" class="hover-item-content px-2">
+						<h6 class="text text-shadow">Wallpapers</h6>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<!-- 3 -->
+	<div class="row w-100 m-0 mw-100 h-100 scroll-snap">
+		<div class="col-sm-6 col-md-6 p-0 bg-5">
+			<a href="./interior">
+				<div class="w-100 hover-item">
+					<div>
+						<h5 class="text text-shadow">Interior</h5>
+					</div>
+				</div>
+			</a>
+		</div>
+		
+		<div class="col-sm-6 col-md-6 p-0 bg-6">
+			<a href="./contact-us">
+				<div class="w-100 hover-item">
+					<div>
+						<h5 class="text ext-shadow">Contact</h5>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<!-- 4 -->
+	<div class="row w-100 m-0 mw-100 h-100 scroll-snap">
+		<div class="col-12 p-0 bg-7">
+			<a href="./explore">
+				<div class="w-100 hover-item">
+					<div id="hover-item-content" class="hover-item-content px-2">
+						<h5 class="text text-shadow">Wonder & Wander</h5>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<!-- JS -->
+<script>
+	let height = 0
+
+	if (document.querySelector('#wpadminbar')) {
+		height = height + document.querySelector('#wpadminbar').offsetHeight
+	}
+
+	if (document.querySelector('.header-wrapper')) {
+		height = height + document.querySelector('.header-wrapper').offsetHeight
+	}
+
+	document.getElementById("components").style.height = `calc(100vh - ${height}px)`
+</script>

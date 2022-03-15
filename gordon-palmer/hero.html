@@ -1,0 +1,150 @@
+<link rel="stylesheet" href="https://w3st-io.github.io/index.css">
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: sans-serif;
+	}
+
+	.content {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.holder {
+		background-color: aliceblue;
+		width: 100%;
+	}
+
+	#background {
+		position: absolute;
+		top: 0px;
+		height: 100%;
+	}
+	
+	#wall {
+		position: absolute;
+		top: 0px;
+		width: 100%;
+	}
+
+	.b-c {
+		background-color: #ffe6cd;
+	}
+
+	.logo {
+		margin-top: 0;
+		font-size: 5em;
+	}
+	
+	@media (min-width: 992px) {
+		.logo {
+			margin-top: 300px;
+		}
+	}
+
+	.bg-light-frost {
+		background-color: rgba(251, 251, 251, 0.253);
+		backdrop-filter: blur(10px)!important;
+		-webkit-backdrop-filter: blur(10px)!important;
+	}
+</style>
+
+
+<div class="bootstrap-wrapper b-c">
+
+
+	<div class="container-lg">
+		<div class="content">
+			<div class="holder">
+				<img id="background" src="./int.jpg" class="mouse" value="5">
+				
+				<div id="wall" value="-5">
+					<div class="row">
+						<div class="col-12 col-lg-6 col-xl-6 p-0 b-c">
+							<div class="mouse2" value="-3">
+								<h1 class="text-center logo" style="color: rgb(255, 255, 255);">
+									WEIRD PARALLAX EFFECT!
+								</h1>
+							</div>
+						</div>
+						
+						<div class="col-12 col-lg-6 col-xl-6 p-0" style="height: 100vh">
+							<img
+								src="./wall.png"
+								id=""
+								class=""
+								style="height: 100%; width: 100%;"
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="mouse2" value="5">
+					<div class="bg-light-frost" style="margin: auto; max-width: 360px; height: 100px;">
+						<span></span>
+					</div>
+				</div>
+
+				<div id="wall" value="-5">
+					<div class="row">
+						<div class="col-12 col-lg-6 col-xl-6 p-0" style="height: 100vh">
+						
+							<img id="background" src="./plant.png" class="mouse" value="-2">
+						</div>
+					</div>
+				</div>
+
+				<div id="wall" class="mouse" value="-10">
+					<div class="row">
+						<div class="col-12 p-0" style="height: 100vh">
+							<div class="bg-light-frost" style="margin-top: 700px; margin-left: auto; max-width: 360px; height: 100px;">
+								<span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+<script type="text/javascript">
+	document.addEventListener("mousemove", parallax)
+
+	function parallax(event) {
+
+		this.querySelectorAll(".mouse").forEach((shift) => {
+			const position = shift.getAttribute("value")
+
+			const x = (window.innerWidth - event.pageX * position) / 90
+
+			shift.style.transform = `
+				translateX(${x}px)
+			`
+		})
+
+		this.querySelectorAll(".mouse2").forEach((shift) => {
+			const position = shift.getAttribute("value")
+
+			const x = (window.innerWidth - event.pageX * position) / 300
+
+			const y = (window.innerHeight - event.pageY * position) / 300
+
+			shift.style.transform = `
+				translateX(${x}px)
+				translateY(${y}px)
+			`
+		})
+
+	}
+</script>

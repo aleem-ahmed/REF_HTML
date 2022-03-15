@@ -1,0 +1,204 @@
+<!-- Grid system only -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css" />
+
+<!-- Bootstrap Overriding -->
+<style>
+	.w-100 { width: 100% !important; }
+	.h-100 { height: 100% !important; }
+	.m-0 { margin: 0 !important; }
+	.p-0 { padding: 0 !important; }
+	.row { max-width: 100% !important; }
+	.overflow-hidden { overflow: hidden !important; }
+	.text-shadow { text-shadow: 1px 1px rgba(0, 0, 0, 0.50) !important }
+
+	.pb-2 { padding-bottom: 30px !important; }
+</style>
+
+<!-- Universal Styling -->
+<style>
+	.bg-0 {
+		background-image: url('https://source.unsplash.com/1200x600/?newyork');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-1 {
+		background-image: url('https://source.unsplash.com/1200x600/?manhattan');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-2 {
+		background-image: url('https://source.unsplash.com/1200x600/?nyc');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-3 {
+		background-image: url('https://source.unsplash.com/1200x600/?easthill');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-4 {
+		background-image: url('https://source.unsplash.com/1200x600/?interior');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-5 {
+		background-image: url('https://source.unsplash.com/1200x600/?skyline');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+</style>
+
+<style>
+	.item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		height: 100%;
+		width: 100%;
+	}
+
+	.item:before {
+		content: "";
+		display: block;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.item:hover:before {
+		background-color: rgba(0, 0, 0, 0.40);
+	}
+
+	.item div {
+		position: absolute;
+		text-align: center;
+		font-size: 3em !important;
+		cursor: pointer;
+		color: white;
+		text-transform: uppercase;
+	}
+
+	.item .hidden-popup { display: none; }
+	.item:hover .hidden-popup { display: block; }
+
+	.item .text {
+		text-align: center;
+		text-transform: uppercase;
+		cursor: pointer;
+		color: white;
+		margin: 0;
+	}
+</style>
+
+<!-- JS -->
+<script>
+	let height = 0
+
+	if (document.querySelector('#wpadminbar')) {
+		height = height + document.querySelector('#wpadminbar').offsetHeight
+	}
+
+	if (document.querySelector('.header-wrapper')) {
+		height = height + document.querySelector('.header-wrapper').offsetHeight
+	}
+
+	document.head.insertAdjacentHTML(
+		'beforeend',
+		`
+			<style>
+				.component {
+					height: calc(50vh - ${height}px)
+				}
+			</style>
+		`
+	)
+</script>
+
+<div class="bootstrap-wrapper">
+	<div class="row m-0">
+		<div class="col-lg-4 pb-2">
+			<div id="component" class="bg-0 component">
+				<a href="./east-hill">
+					<div class="w-100 item">
+						<div class="hidden-popup">
+							<h5 class="text">East Hill</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="col-lg-4 pb-2">
+			<div id="component" class="bg-1 component">
+				<a href="./fort-lee-residence">
+					<div class="w-100 item">
+						<div class="hidden-popup">
+							<h5 class="text">Fort Lee Residence</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="col-lg-4 pb-2">
+			<div id="component" class="bg-2 component">
+				<a href="./musicians-den">
+					<div class="w-100 item">
+						<div class="hidden-popup">
+							<h5 class="text">Musicians Den</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="col-lg-4 pb-2">
+			<div id="component" class="bg-3 component">
+				<a href="./new-york-city">
+					<div class="w-100 item">
+						<div class="hidden-popup">
+							<h5 class="text">New York City</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="col-lg-4 pb-2">
+			<div id="component" class="bg-4 component">
+				<a href="./tenafly-residence">
+					<div class="w-100 item">
+						<div class="hidden-popup">
+							<h5 class="text">Tenafly Residence</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="col-lg-4 pb-2">
+			<div id="component" class="bg-5 component">
+				<a href="./upper-east-side">
+					<div class="w-100 item">
+						<div class="hidden-popup">
+							<h5 class="text">Upper East Side</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
